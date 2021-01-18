@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - master
+
+name: Deploy update to gcloud
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git pull new version on gcloud vm
+        uses: appleboy/ssh-action@master
+        with:
+          host: 35.232.40.1
+          username: www-data
+          key: ${{ secrets.SCP_SSH_KEY }}
+          port: 22
+          script: git pull

@@ -10,7 +10,7 @@ body {
     box-sizing: border-box;
     padding: 0.3in;
     width: 8.5in;
-    height: 12in;
+    height: 14in;
     -webkit-box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
     box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.7);
     position: relative;
@@ -20,19 +20,13 @@ body {
     padding: 0;
 }
 
-object {
-    margin:0;
-    padding:0;
-    width: 100%;
-    height: 12.55in;
-}
-
 @media print {
     .page {
         padding: 0.3in;
         margin: 0;
         -webkit-box-shadow: none;
         box-shadow: none;
+        page-break-after: always;
     }
 
     .page#cover {
@@ -52,11 +46,17 @@ object {
     right: 0;
 }
 
+#cover #cover-logo {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+}
+
 #cover #title {
     width: 8.5in;
     text-align: center;
     position: absolute;
-    top: 40%;
+    top: 48%;
 }
 
 #cover h1 {
@@ -65,8 +65,13 @@ object {
 
 #cover sup {
     position: relative;
-    top: -35px;
+    top: -30px;
     left: 25%;
+}
+
+[data-page], .jump-to {
+    margin:0;
+    padding: 0;
 }
 
 /* ########## TABLE OF CONTENTS ############## */
